@@ -1,6 +1,11 @@
+"""
+This module provides a REPL interface for interacting with the calculator.
+"""
+
 from src.plugin_manager import PluginManager
 
 def run_repl():
+    """Runs the REPL loop for user interaction with the calculator."""
     plugin_manager = PluginManager()
     plugin_manager.load_plugins('src/plugins')  # Ensure this directory is correct
 
@@ -10,8 +15,8 @@ def run_repl():
         if command == 'menu':
             plugins = plugin_manager.list_plugins()
             print("Available Plugins:")
-            for name, info in plugins.items():
-                print(f"{name}: {info}")
+            for name in plugins:
+                print(f"{name}")
         elif command in plugin_manager.plugins:
             args = input("Enter arguments: ").split()
             try:

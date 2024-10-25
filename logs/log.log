@@ -12,3 +12,10 @@
 2024-10-25 11:53:38,122 - INFO - Executed plugin command power with result: 279936.0
 2024-10-25 11:53:56,660 - INFO - Executed command add with result: 13.0
 2024-10-25 11:55:36,834 - INFO - Executed command add with result: 21.0
+2024-10-25 13:53:43,004 - INFO - Starting the calculator application.
+2024-10-25 13:53:48,003 - WARNING - Unknown command entered.
+2024-10-25 13:53:50,877 - INFO - Exiting the calculator application.
+2024-10-25 13:54:20,882 - INFO - Starting the calculator application.
+2024-10-25 13:54:25,948 - INFO - Executing command: add with arguments: [6.0, 7.0]
+2024-10-25 13:54:48,436 - WARNING - Unknown command entered.
+2024-10-25 13:54:51,617 - INFO - Exiting the calculator application.
