@@ -1,7 +1,6 @@
 """
-This module contains the Calculator class which implements basic arithmetic operations.
+This module contain the Calculator class which implements basic arithmetic operations.
 """
-
 class Calculator:
     """
     A class used to perform basic arithmetic operations such as addition, subtraction,

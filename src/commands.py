@@ -1,9 +1,8 @@
 """
 This module defines command classes for basic arithmetic operations (add, subtract,
-multiply, divide) using the Command pattern. Each command class is responsible for
+multiply, divide.) using the Command pattern. Each command class is responsible for
 executing a specific operation on the calculator.
 """
-
 class Command:
     """
     A base class for all command types. Subclasses must implement the `execute` method.
