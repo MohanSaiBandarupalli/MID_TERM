@@ -1,5 +1,3 @@
-# src/repl.py
-
 from src.plugin_manager import PluginManager
 
 def run_repl():
