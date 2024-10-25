@@ -22,18 +22,18 @@ jobs:
     - name: Install dependencies
       run: |
         python -m venv venv
-        source venv/bin/activate
+        . venv/bin/activate
         pip install -r requirements.txt
         pip install pytest pytest-cov pylint
 
     - name: Run Tests with Coverage
       run: |
-        source venv/bin/activate
+        . venv/bin/activate
         pytest --cov=src --cov-report=xml --cov-report=term
 
     - name: Run Pylint
       run: |
-        source venv/bin/activate
+        . venv/bin/activate
         pylint src tests
 
     - name: Upload Coverage Report
