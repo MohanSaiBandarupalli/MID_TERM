@@ -64,13 +64,13 @@ class Calculator:
             float: The result of dividing the first argument by the subsequent arguments.
 
         Raises:
-            ValueError: If fewer than two arguments are provided or if division by zero is attempted.
+            ValueError: If fewer than two arguments are provided or 
+            if division by zero is attempted.
         """
         if len(args) < 2:
             raise ValueError("At least two numbers are required for division.")
         if 0 in args[1:]:
             raise ValueError("Division by zero is not allowed.")
-        
         result = args[0]
         for number in args[1:]:
             result /= number

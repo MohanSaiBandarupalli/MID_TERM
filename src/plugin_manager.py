@@ -64,8 +64,9 @@ class PluginManager:
         Args:
             plugin_directory (str): The directory from which to load plugins.
 
-        This method dynamically loads each Python file in the directory (excluding __init__.py files)
-        as a plugin. Each loaded plugin must implement the PluginInterface to be registered.
+        This method dynamically loads each Python file in the directory 
+        (excluding __init__.py files) as a plugin. Each loaded plugin must 
+        implement the PluginInterface to be registered.
         """
         for filename in os.listdir(plugin_directory):
             if filename.endswith('.py') and not filename.startswith('__'):
