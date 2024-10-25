@@ -1,0 +1,14 @@
+2024-10-25 11:47:20,683 - INFO - PowerPlugin registered
+2024-10-25 11:47:20,683 - INFO - Plugin added to commands: power
+2024-10-25 11:47:20,683 - INFO - Displayed available commands
+2024-10-25 11:47:28,022 - INFO - Executed command add with result: 13.0
+2024-10-25 11:47:39,141 - INFO - Executed command add with result: 0
+2024-10-25 11:47:48,266 - INFO - Displayed available commands
+2024-10-25 11:53:15,476 - INFO - PowerPlugin registered
+2024-10-25 11:53:15,476 - INFO - Plugin added to commands: power
+2024-10-25 11:53:15,476 - INFO - Displayed available commands
+2024-10-25 11:53:19,260 - INFO - Displayed available commands
+2024-10-25 11:53:26,541 - INFO - Displayed available commands
+2024-10-25 11:53:38,122 - INFO - Executed plugin command power with result: 279936.0
+2024-10-25 11:53:56,660 - INFO - Executed command add with result: 13.0
+2024-10-25 11:55:36,834 - INFO - Executed command add with result: 21.0
