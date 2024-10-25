@@ -1,6 +1,7 @@
 """
 This module loads environment variables and sets default configurations for the application.
-It uses the `dotenv` library to load variables from a `.env` file and provides default values if not present.
+It uses the `dotenv` library to load variables from a `.env` 
+file and provides default values if not present.
 """
 
 import os

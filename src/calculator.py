@@ -20,18 +20,18 @@ class Calculator:
         """
         return sum(args)
 
-    def subtract(self, x, y):
+    def subtract(self, minuend, subtrahend):
         """
         Performs subtraction of two numbers.
 
         Args:
-            x (float): The number from which to subtract.
-            y (float): The number to subtract from x.
+            minuend (float): The number from which to subtract.
+            subtrahend (float): The number to subtract from minuend.
 
         Returns:
-            float: The result of subtracting y from x.
+            float: The result of subtracting subtrahend from minuend.
         """
-        return x - y
+        return minuend - subtrahend
 
     def multiply(self, *args):
         """

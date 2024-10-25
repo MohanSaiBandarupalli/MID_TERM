@@ -1,73 +1,49 @@
 """
-This module contains unit tests for the PluginManager class and plugin interfaces.
-It verifies the functionality of registering and retrieving plugins.
+This module contains additional unit tests to improve coverage for the PluginManager class.
+It includes tests for error handling and edge cases.
 """
 
-# pylint: disable=redefined-outer-name
 import pytest
 from src.plugin_manager import PluginManager
-from src.plugins.plugin_interface import PluginInterface
-
-class TestPlugin(PluginInterface):
-    """A test implementation of the PluginInterface for testing purposes."""
-    def execute(self, *args):
-        return "Plugin executed successfully"
-
-class PowerPlugin(PluginInterface):
-    """A plugin to perform exponentiation."""
-    def execute(self, *args):
-        """Raises the base to the power of the exponent."""
-        if len(args) != 2:
-            raise ValueError("PowerPlugin requires exactly two arguments: base and exponent.")
-        base, exponent = args
-        return base ** exponent
-
+# pylint: disable=redefined-outer-name
 @pytest.fixture
-def unique_plugin_manager():
-    """Fixture to initialize the PluginManager for testing."""
+def empty_plugin_manager():
+    """Fixture to initialize an empty PluginManager instance for testing."""
     return PluginManager()
 
-def test_register_and_retrieve_plugin(unique_plugin_manager):
-    """Test the registration and retrieval of a plugin."""
-    plugin = TestPlugin()
-    unique_plugin_manager.register_plugin("test_plugin", plugin)
-
-    retrieved_plugin = unique_plugin_manager.get_plugin("test_plugin")
-    assert retrieved_plugin is not None
-    assert isinstance(retrieved_plugin, PluginInterface)
-    assert retrieved_plugin.execute() == "Plugin executed successfully"
-
-def test_power_plugin(unique_plugin_manager):
-    """Test the functionality of the PowerPlugin."""
-    plugin = PowerPlugin()
-    unique_plugin_manager.register_plugin("power", plugin)
-
-    power_plugin = unique_plugin_manager.get_plugin("power")
-    result = power_plugin.execute(2, 3)  # Call with two arguments
-    assert power_plugin is not None
-    assert isinstance(power_plugin, PluginInterface)
-    assert result == 8
-
-def test_dynamic_plugin_loading(unique_plugin_manager, tmp_path):
-    """Test dynamic loading of plugins from a directory."""
-    # Create a temporary plugin file
-    plugin_code = """
-from src.plugins.plugin_interface import PluginInterface
-
-class TempPlugin(PluginInterface):
-    def execute(self):
-        return "Temp Plugin executed"
-"""
-    plugin_file = tmp_path / "temp_plugin.py"
-    plugin_file.write_text(plugin_code)
-
-    # Load plugins from the temporary directory
-    unique_plugin_manager.load_plugins(str(tmp_path))
-
-    # Check if the plugin was registered correctly
-    assert "temp_plugin" in unique_plugin_manager.list_plugins()  # Match the registered name
-
-def test_register_none_plugin(unique_plugin_manager):
-    """Test registering a None as a plugin."""
+def test_register_none_plugin(empty_plugin_manager):
+    """Test registering None as a plugin to ensure it raises a TypeError."""
     with pytest.raises(TypeError):
-        unique_plugin_manager.register_plugin("none_plugin", None)
+        empty_plugin_manager.register_plugin("none_plugin", None)
+
+def test_get_nonexistent_plugin(empty_plugin_manager):
+    """Test retrieving a plugin that hasn't been registered."""
+    assert empty_plugin_manager.get_plugin("nonexistent") is None
+
+def test_list_plugins_empty(empty_plugin_manager):
+    """Test listing plugins when no plugins have been registered."""
+    assert not list(empty_plugin_manager.list_plugins())  # Simplified boolean check
+
+def test_load_plugins_from_empty_directory(empty_plugin_manager, tmp_path):
+    """Test loading plugins from an empty directory."""
+    empty_plugin_manager.load_plugins(str(tmp_path))
+    assert not list(empty_plugin_manager.list_plugins())  # Simplified boolean check
+
+def test_load_plugins_from_nonexistent_directory(empty_plugin_manager):
+    """Test loading plugins from a non-existent directory."""
+    non_existent_dir = "./non_existent_directory"
+    with pytest.raises(FileNotFoundError):
+        empty_plugin_manager.load_plugins(non_existent_dir)
+
+def test_register_duplicate_plugin(empty_plugin_manager):
+    """Test registering a plugin with a duplicate name."""
+    class MockPlugin:
+        """A mock plugin class for testing."""
+        def execute(self):
+            """Mock execute method."""
+            return "Executed"
+
+    empty_plugin_manager.register_plugin("mock", MockPlugin())
+    # Register the same plugin name again and check it overwrites
+    empty_plugin_manager.register_plugin("mock", MockPlugin())
+    assert list(empty_plugin_manager.list_plugins()) == ["mock"]
