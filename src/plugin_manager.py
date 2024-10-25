@@ -1,6 +1,6 @@
 import os
-import importlib
-from src.plugins.plugin_interface import PluginInterface  # Add this import
+import importlib.util
+from src.plugins.plugin_interface import PluginInterface  # Import the interface here
 
 class PluginManager:
     def __init__(self):
@@ -9,7 +9,7 @@ class PluginManager:
     def register_plugin(self, name, plugin):
         """Register a new plugin."""
         if plugin is None:
-            raise TypeError("Cannot register a None plugin.")  # Ensure we raise TypeError for None
+            raise TypeError("Cannot register a None plugin.")
         self.plugins[name] = plugin
 
     def get_plugin(self, name):
@@ -35,5 +35,4 @@ class PluginManager:
                 for attr in dir(module):
                     cls = getattr(module, attr)
                     if isinstance(cls, type) and issubclass(cls, PluginInterface):
-                        plugin_instance = cls()  # Instantiate the plugin
-                        self.register_plugin(module_name.lower(), plugin_instance)  # Use the module name as the key
+                        self.register_plugin(module_name, cls())  # Register using the module name

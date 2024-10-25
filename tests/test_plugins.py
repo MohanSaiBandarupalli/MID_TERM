@@ -2,6 +2,7 @@
 This module contains unit tests for the PluginManager class and plugin interfaces.
 It verifies the functionality of registering and retrieving plugins.
 """
+
 # pylint: disable=redefined-outer-name
 import pytest
 from src.plugin_manager import PluginManager

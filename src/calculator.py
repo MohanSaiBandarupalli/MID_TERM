@@ -1,6 +1,7 @@
 """
-This module contain the Calculator class which implements basic arithmetic operations.
+This module contains the Calculator class which implements basic arithmetic operations.
 """
+
 class Calculator:
     """
     A class used to perform basic arithmetic operations such as addition, subtraction,
@@ -15,7 +16,7 @@ class Calculator:
             *args: A variable number of numeric arguments to add together.
 
         Returns:
-            The sum of all the arguments.
+            float: The sum of all the arguments.
         """
         return sum(args)
 
@@ -24,11 +25,11 @@ class Calculator:
         Performs subtraction of two numbers.
 
         Args:
-            x: The number from which to subtract.
-            y: The number to subtract from x.
+            x (float): The number from which to subtract.
+            y (float): The number to subtract from x.
 
         Returns:
-            The result of subtracting y from x.
+            float: The result of subtracting y from x.
         """
         return x - y
 
@@ -40,7 +41,7 @@ class Calculator:
             *args: A variable number of numeric arguments to multiply together.
 
         Returns:
-            The product of all the arguments.
+            float: The product of all the arguments.
 
         Raises:
             ValueError: If no arguments are provided.
@@ -60,18 +61,17 @@ class Calculator:
             *args: A variable number of numeric arguments to divide.
 
         Returns:
-            The result of dividing the first argument by the subsequent arguments.
+            float: The result of dividing the first argument by the subsequent arguments.
 
         Raises:
-            ValueError: If fewer than two arguments are 
-            provided or if division by zero is attempted.
+            ValueError: If fewer than two arguments are provided or if division by zero is attempted.
         """
-        if len(args) == 0 or len(args) == 1:
+        if len(args) < 2:
             raise ValueError("At least two numbers are required for division.")
         if 0 in args[1:]:
             raise ValueError("Division by zero is not allowed.")
+        
         result = args[0]
         for number in args[1:]:
             result /= number
         return result
-    
