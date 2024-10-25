@@ -5,7 +5,9 @@ It includes tests for error handling and edge cases.
 
 import pytest
 from src.plugin_manager import PluginManager
+
 # pylint: disable=redefined-outer-name
+
 @pytest.fixture
 def empty_plugin_manager():
     """Fixture to initialize an empty PluginManager instance for testing."""
@@ -47,3 +49,16 @@ def test_register_duplicate_plugin(empty_plugin_manager):
     # Register the same plugin name again and check it overwrites
     empty_plugin_manager.register_plugin("mock", MockPlugin())
     assert list(empty_plugin_manager.list_plugins()) == ["mock"]
+
+def test_plugin_execute_method(empty_plugin_manager):
+    """Test that a registered plugin's execute method works as expected."""
+    class MockPlugin:
+        """A mock plugin class for testing."""
+        def execute(self):
+            """Mock execute method."""
+            return "Executed"
+
+    plugin = MockPlugin()
+    empty_plugin_manager.register_plugin("test_plugin", plugin)
+    registered_plugin = empty_plugin_manager.get_plugin("test_plugin")
+    assert registered_plugin.execute() == "Executed"  # Verifies execute method behavior

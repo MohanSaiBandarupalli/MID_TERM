@@ -46,9 +46,12 @@ class HistoryFacade:
         Returns:
             pd.DataFrame: A DataFrame containing the calculation history.
         """
+        if not os.path.exists(self.history_file) or os.path.getsize(self.history_file) == 0:
+            # Return an empty DataFrame with expected columns if the file is empty or missing
+            return pd.DataFrame(columns=["Operation", "Data", "Result"])
         return pd.read_csv(self.history_file)
 
     def clear_history(self):
         """Clears the calculation history by emptying the history file."""
         with open(self.history_file, 'w', encoding='utf-8') as f:
-            f.truncate()
+            f.write("Operation,Data,Result\n")  # Reset file with headers

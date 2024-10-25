@@ -19,3 +19,8 @@
 2024-10-25 13:54:25,948 - INFO - Executing command: add with arguments: [6.0, 7.0]
 2024-10-25 13:54:48,436 - WARNING - Unknown command entered.
 2024-10-25 13:54:51,617 - INFO - Exiting the calculator application.
+2024-10-25 15:32:51,778 - INFO - Starting the calculator application.
+2024-10-25 15:32:54,733 - INFO - Executing command: add with arguments: [6.0, 7.0]
+2024-10-25 15:33:01,797 - INFO - Executing command: add with arguments: [76.0, 67.0]
+2024-10-25 15:33:08,694 - INFO - Executing command: subtract with arguments: [56.0, 76.0]
+2024-10-25 15:34:45,558 - INFO - Exiting the calculator application.

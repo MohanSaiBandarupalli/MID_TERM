@@ -1,7 +1,6 @@
 """
 Configuration file for pytest fixtures and setup functions for testing.
 """
-
 import os
 import pytest
 from src.history_manager import HistoryFacade
