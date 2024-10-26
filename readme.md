@@ -20,13 +20,10 @@ This advanced Python calculator application serves as a demonstration of profess
    ```
 
 2. **Create virtual environment**
-   Ensure `virtualenv` package installed on system. If not, install it using  `pip install virtualenv`
+   Ensure `virtualenv` package installed on system. If not, install it using  `python3 -m venv myenv`
    
-   1. Run below command to create new environment for project
-      ```
-      virtualenv venv
-      ```
-   2. Activate environment:
+
+   1. Activate environment:
       - Windows:
          ```
          venv\Scripts\activate
@@ -150,6 +147,6 @@ pytest
 
 ## Video Demonstration
 
-A demonstration of the calculator's features and functionalities can be found [here](link-to-your-video).
+A demonstration of the calculator's features and functionalities can be found [here](https://drive.google.com/file/d/1xHM1XVM6Bo3tw57ZKBHu_Bop54rhW_SG/view?usp=drive_link).
 
 

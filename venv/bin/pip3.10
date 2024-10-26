@@ -1,4 +1,4 @@
-#!/home/mohansaib/MID_TERM/venv/bin/python3
+#!/home/mohansaib/MID_TERM/venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys

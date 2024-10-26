@@ -31,3 +31,21 @@
 2024-10-25 22:11:27,884 - ERROR - Value error occurred: PowerPlugin requires exactly two arguments: base and exponent.
 2024-10-25 22:11:43,990 - INFO - Executing command: power with arguments: [2.0, 3.0]
 2024-10-25 22:11:54,199 - INFO - Exiting the calculator application.
+2024-10-25 23:23:15,958 - INFO - Starting the calculator application.
+2024-10-25 23:23:21,340 - INFO - Executing command: menu with arguments: []
+2024-10-25 23:23:38,654 - INFO - Exiting the calculator application.
+2024-10-25 23:36:16,774 - INFO - Starting the calculator application.
+2024-10-25 23:36:46,614 - INFO - Executing command: add with arguments: [2.0, 4.0]
+2024-10-25 23:36:58,870 - INFO - Executing command: subtract with arguments: [5.0, 6.0]
+2024-10-25 23:37:06,073 - INFO - Executing command: multiply with arguments: [6.0, 7.0]
+2024-10-25 23:38:02,476 - INFO - Exiting the calculator application.
+2024-10-25 23:40:52,574 - INFO - Starting the calculator application.
+2024-10-25 23:41:11,937 - INFO - Executing command: add with arguments: [5.0, 6.0]
+2024-10-25 23:41:26,383 - INFO - Executing command: subtract with arguments: [6.0, 7.0]
+2024-10-25 23:42:05,788 - INFO - Executing command: load_history with arguments: []
+2024-10-25 23:42:26,114 - INFO - Executing command: clear_history with arguments: []
+2024-10-25 23:43:49,411 - INFO - Executing command: power with arguments: [6.0, 7.0]
+2024-10-25 23:45:09,041 - INFO - Exiting the calculator application.
+2024-10-25 23:46:22,937 - INFO - Starting the calculator application.
+2024-10-25 23:46:35,841 - WARNING - Unknown command entered.
+2024-10-25 23:49:09,667 - INFO - Exiting the calculator application.
