@@ -124,6 +124,10 @@ To clear history:
    - The log level can be configured via environment variables.
    - Logs are stored in a specified file(data/log.log) for review.
 
+## LBYL and EAFP Approaches
+   - LBYL (Look Before You Leap): In main.py, commands are checked for validity before executing them, ensuring safe execution and avoiding     errors. For instance, command_input is validated before processing.
+   -EAFP (Easier to Ask for Forgiveness than Permission):When loading history data or executing commands where the code attempts an action directly and handles any exceptions if they occur
+
 ## Plugins
 
 The plugin system allows for easy extension of functionality. For example, the `PowerPlugin` can be used to calculate powers:
