@@ -24,3 +24,10 @@
 2024-10-25 15:33:01,797 - INFO - Executing command: add with arguments: [76.0, 67.0]
 2024-10-25 15:33:08,694 - INFO - Executing command: subtract with arguments: [56.0, 76.0]
 2024-10-25 15:34:45,558 - INFO - Exiting the calculator application.
+2024-10-25 22:11:11,932 - INFO - Starting the calculator application.
+2024-10-25 22:11:18,427 - INFO - Executing command: add with arguments: [6.0, 7.0]
+2024-10-25 22:11:22,098 - INFO - Executing command: menu with arguments: []
+2024-10-25 22:11:27,884 - INFO - Executing command: power with arguments: [2.0, 3.0, 4.0]
+2024-10-25 22:11:27,884 - ERROR - Value error occurred: PowerPlugin requires exactly two arguments: base and exponent.
+2024-10-25 22:11:43,990 - INFO - Executing command: power with arguments: [2.0, 3.0]
+2024-10-25 22:11:54,199 - INFO - Exiting the calculator application.
